@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './pages/login';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+
 
 function App() {
   return (
-    <Login></Login>
+    <Router>
+      <Route exact path="/" component={Login} />
+    </Router>
   );
 }
 
