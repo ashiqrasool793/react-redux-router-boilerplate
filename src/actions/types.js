@@ -1,0 +1,1 @@
+export const FETCH_LOGIN_INFO = "FETCH_LOGIN_INFO";
