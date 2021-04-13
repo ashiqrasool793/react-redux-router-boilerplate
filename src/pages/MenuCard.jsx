@@ -6,11 +6,11 @@ const Card = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #ffffff;
   width: 88%;
-  border-bottom: ${(props) => (props.last ? "" : "1px #D3D3D3 solid;")};
-  padding: 15px;
-  height: 45px;
+  border-bottom: ${(props) => (props.last ? "" : "1px #DDE3E7 solid")};
+  padding: 10px 15px;
+  height: 50px;
 `;
 
 const Chevron = styled.div`
@@ -29,13 +29,13 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 30px;
+  padding-left: 26px;
   width: 80%;
   color: #454f57;
 `;
 
 const Title = styled.div`
-  font-weight: 500;
+  font-weight: 600;
   font-size: ${(props) => (props.profile ? "20px" : "16px")};
   color: ${(props) => (props.profile ? "#383838	" : "")};
   margin-bottom: 5px;

@@ -57,7 +57,7 @@ const MenuData = [
     children: null,
   },
   {
-    Title: "App & Security",
+    Title: "App & Security Settings",
     Subtitle: "Peek Balance, Manage Notifications",
     Icon: require("../assets/icons/redManage.svg"),
     children: null,
@@ -84,7 +84,7 @@ const Wrapper = styled.div`
   height: 100vh;
   margin-top: 5px;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: rgba(142, 142, 147, 0.12);
 `;
 
 const CardWrapper = styled.div`
@@ -108,7 +108,8 @@ const Footer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin-top: 25px;
+  margin-top: auto;
+  margin-bottom: 40px;
 `;
 
 const AppVersion = styled.div`
@@ -120,27 +121,27 @@ const AppVersion = styled.div`
   padding: 10px;
 `;
 const Version = styled.div`
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 5px;
   font-weight: 600;
-  color: grey;
+  color: #858f96;
 `;
 const LastLogin = styled.div`
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 400;
   color: #919191;
 `;
 
 const LogOut = styled.button`
   border-radius: 20px;
-  background-color: red;
-  color: white;
+  background-color: #ff3e3e;
+  color: #ffffff;
   border: none;
-  width: 75px;
-  height: 20px;
+  width: 79px;
+  height: 24px;
   padding: 2px;
   font-weight: 800;
-  font-size: 10px;
+  font-size: 11px;
 `;
 
 const Accordion = () => {
