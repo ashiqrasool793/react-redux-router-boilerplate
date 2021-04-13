@@ -31,23 +31,23 @@ const Description = styled.div`
   justify-content: center;
   padding-left: 30px;
   width: 80%;
-  color: #696969;
+  color: #454f57;
 `;
 
 const Title = styled.div`
   font-weight: 500;
   font-size: ${(props) => (props.profile ? "20px" : "16px")};
   color: ${(props) => (props.profile ? "#383838	" : "")};
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 `;
 
 const Subtitle = styled.div`
-  font-weight: 300;
+  font-weight: normal;
   font-size: 12px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: grey;
+  color: #858f96;
 `;
 const Icon = styled.img`
   width: 20px;

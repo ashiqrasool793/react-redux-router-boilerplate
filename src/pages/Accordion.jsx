@@ -91,13 +91,13 @@ const CardWrapper = styled.div`
   background-color: white;
   width: 100%;
   border-bottom: ${(props) =>
-    props.last || props.profile || props.active ? "1px #dcdcdc solid" : ""};
+    props.last || props.profile || props.active ? "1px #DDE3E7 solid" : ""};
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   justify-content: center;
   box-shadow: ${(props) =>
-    props.last || props.profile ? "0 3px 2px -2px lightgrey" : ""};
+    props.last || props.profile ? "0px 2px 4px rgba(23,38,51,0.04)" : ""};
   margin-bottom: ${(props) => (props.profile ? "15px" : "")};
   padding-top: ${(props) => (props.profile ? "10px" : "")};
 `;
