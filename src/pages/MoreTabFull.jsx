@@ -198,7 +198,7 @@ const SearchBar = styled.div`
   font-weight: 400;
 `;
 
-const Accordion = () => {
+const MoreTabFull = () => {
   const [active, setActive] = useState(null);
   const activate = (idx) => {
     if (active === idx) {
@@ -209,6 +209,14 @@ const Accordion = () => {
   };
   return (
     <Wrapper>
+      <Header>
+        <Icon menu src={require("../assets/icons/Search.svg")} />
+        <Search>
+          <Icon small src={require("../assets/icons/magnifier.svg")} />
+          <SearchBar>Search services</SearchBar>
+        </Search>
+        <Icon menu src={require("../assets/icons/Chatbot.svg")} />
+      </Header>
       <CardWrapper last={true} profile>
         <MenuCard
           profile={true}
@@ -270,7 +278,29 @@ const Accordion = () => {
         </AppVersion>
         <LogOut>LOG OUT</LogOut>
       </Footer>
+      <MenuBar>
+        <NavBarItem>
+          <Icon src={require("../assets/icons/Home.svg")} />
+          <NavTitle>Home</NavTitle>
+        </NavBarItem>
+        <NavBarItem>
+          <Icon src={require("../assets/icons/Icon-3.svg")} />
+          <NavTitle>Invest</NavTitle>
+        </NavBarItem>
+        <NavBarItem>
+          <Icon src={require("../assets/icons/Icon-2.svg")} />
+          <NavTitle>{"Pay & Transfer"}</NavTitle>
+        </NavBarItem>
+        <NavBarItem>
+          <Icon src={require("../assets/icons/Icon-1.svg")} />
+          <NavTitle>{"Plan"}</NavTitle>
+        </NavBarItem>
+        <NavBarItem>
+          <Icon src={require("../assets/icons/Icon.svg")} />
+          <NavTitle>{"Home"}</NavTitle>
+        </NavBarItem>
+      </MenuBar>
     </Wrapper>
   );
 };
-export default Accordion;
+export default MoreTabFull;
