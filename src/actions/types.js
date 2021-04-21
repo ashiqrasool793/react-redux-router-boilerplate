@@ -1,1 +1,2 @@
 export const FETCH_LOGIN_INFO = "FETCH_LOGIN_INFO";
+export const STORE_APP_DATA = "STORE_APP_DATA";

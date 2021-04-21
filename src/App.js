@@ -6,15 +6,22 @@ import DragDrop from "./pages/dragdrop";
 import FaceDetection from "./pages/faceDetection";
 import Accordion from "./pages/Accordion";
 import MoreTabFull from "./pages/MoreTabFull";
+import MoreTabNoNav from "./pages/MoreTabNoNav";
+import login from "./pages/login";
+import Support from "./pages/Support";
+import ScrollToTop from "./util/ScrollToTop";
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Accordion} />
-      <Route exact path="/dragdrop" component={DragDrop} />
-      <Route exact path="/face" component={FaceDetection} />
-      <Route exact path="/moretab" component={Accordion} />
-      <Route exact path="/moretabfull" component={MoreTabFull} />
+      <ScrollToTop>
+        <Route exact path="/" component={login} />
+        <Route exact path="/dragdrop" component={DragDrop} />
+        <Route exact path="/face" component={FaceDetection} />
+        <Route exact path="/moretab" component={Accordion} />
+        <Route exact path="/moretabfull" component={MoreTabNoNav} />
+        <Route exact path="/support" component={Support} />
+      </ScrollToTop>
     </Router>
   );
 }
