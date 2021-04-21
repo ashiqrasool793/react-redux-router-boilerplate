@@ -332,8 +332,8 @@ const MoreTabNoNav = (props) => {
               <CSSTransitionGroup
                 transitionName="example"
                 transitionEnterTimeout={400}
-                transitionLeaveTimeout={300}
-                transitionLeave={true}
+                transitionLeaveTimeout={400}
+                transitionLeave={false}
                 style={{ display: "contents" }}
               >
                 {item.children && index === active
