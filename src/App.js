@@ -10,6 +10,7 @@ import MoreTabNoNav from "./pages/MoreTabNoNav";
 import login from "./pages/login";
 import Support from "./pages/Support";
 import ScrollToTop from "./util/ScrollToTop";
+import Suggestion from "./pages/Suggestion";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/moretab" component={Accordion} />
         <Route exact path="/moretabfull" component={MoreTabNoNav} />
         <Route exact path="/support" component={Support} />
+        <Route exact path="/suggest" component={Suggestion} />
       </ScrollToTop>
     </Router>
   );

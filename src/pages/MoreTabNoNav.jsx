@@ -81,13 +81,15 @@ const MenuData = [
         Title: "Discover",
         Subtitle: "Find out what's news and get tips",
         Icon: "",
-        id: "",
+        route: "internal",
+        id: "support",
       },
       {
         Title: "Share a Feedback",
         Subtitle: "Report an issue or help us improve",
         Icon: "",
-        id: "",
+        route: "internal",
+        id: "suggest",
       },
       {
         Title: "Get Help",
