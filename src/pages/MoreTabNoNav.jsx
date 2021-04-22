@@ -98,6 +98,13 @@ const MenuData = [
         route: "internal",
         id: "support",
       },
+      {
+        Title: "Contact Us",
+        Subtitle: "Call our hotline in Singapore or Overseas",
+        Icon: "",
+        route: "internal",
+        activate: () => window.open("tel:91234567", "_self"),
+      },
     ],
   },
 ];
@@ -257,10 +264,16 @@ const MoreTabNoNav = (props) => {
   };
 
   let history = useHistory();
+  const [nativeData, setNativeData] = useState(null);
 
   useEffect(() => {
     window.storeAppData = props.storeAppData;
+    console.log(props);
   }, []);
+
+  useEffect(() => {
+    setNativeData(props.nativeData);
+  }, [props.nativeData]);
 
   const navigateToApp = (id) => {
     console.log("HI");
@@ -304,7 +317,7 @@ const MoreTabNoNav = (props) => {
         <CardWrapper last={true} profile>
           <MenuCard
             profile={true}
-            activate={() => window.open("tel:91234567", "_self")}
+            activate={() => console.log("CLICK")}
             active={false}
             title={"Ashiqa"}
             subtitle={"Nickname, Address, User ID"}
@@ -352,7 +365,9 @@ const MoreTabNoNav = (props) => {
                               ? subItem.route === "internal"
                                 ? routeToPage
                                 : navigateToApp
-                              : () => console.log("click")
+                              : subItem.activate
+                              ? subItem.activate
+                              : () => console.log("CLICK")
                           }
                         />
                       );
@@ -365,8 +380,18 @@ const MoreTabNoNav = (props) => {
       </Body>
       <Footer>
         <AppVersion>
-          <Version>App Version: 1.0.29</Version>
-          <LastLogin>Last Login: 17 April 2020, 19:20</LastLogin>
+          <Version>
+            App Version:{" "}
+            {nativeData && nativeData.appVersion
+              ? nativeData.appVersion
+              : "2.2.2"}
+          </Version>
+          <LastLogin>
+            Last Login:{" "}
+            {nativeData && nativeData.lastLogin
+              ? nativeData.lastLogin
+              : "17 April 2020, 19:20"}
+          </LastLogin>
         </AppVersion>
         <LogOut>LOG OUT</LogOut>
       </Footer>
