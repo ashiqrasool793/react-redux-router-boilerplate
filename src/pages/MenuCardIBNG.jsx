@@ -6,10 +6,11 @@ const Card = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  width: 90%;
+  width: 100%;
   border-bottom: ${(props) => (props.last ? "" : "1px #DDE3E7 solid")};
-  padding: ${(props) => (props.support ? "0 15px" : "10px 15px 10px 0px;")};
+  padding: ${(props) => (props.support ? "0 15px" : "10px 20px 10px 20px;")};
   height: 70px;
+  border-radius: ${(props) => (props.last ? "10px" : null)};
 `;
 const Chevron = styled.div`
   transform: ${(props) => (props.active ? "rotate(90deg)" : null)};
@@ -25,10 +26,11 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: ${(props) => (props.support ? "100%" : "80%")};
+  align-items: ${(props) => (props.amount ? "flex-end" : "")};
+  width: ${(props) => (props.amount ? "" : "100%")};
   color: #454f57;
   padding-left: ${(props) =>
-    props.profile || props.support ? "15px" : "26px"};
+    props.profile || props.support ? "15px" : "15px"};
   padding-bottom: ${(props) => (props.profile ? "3px" : "null")};
 `;
 const Title = styled.div`
@@ -36,6 +38,7 @@ const Title = styled.div`
   font-size: ${(props) => (props.profile ? "20px" : "16px")};
   color: ${(props) => (props.profile ? "#172633" : "")};
   margin-bottom: ${(props) => (props.support ? "0" : "5px")};
+  margin-left: ${(props) => (props.amount ? "5px" : "")};
 `;
 const Subtitle = styled.div`
   font-weight: normal;
@@ -46,10 +49,19 @@ const Subtitle = styled.div`
   color: #9ba4ab;
 `;
 const Icon = styled.img`
-  width: ${(props) => (props.profile ? "60px" : "24px")};
-  padding-left: ${(props) => (props.profile ? null : "10px")};
+  width: ${(props) => (props.profile ? "60px" : "35px")};
+  padding-left: ${(props) => (props.profile ? null : "0px")};
   margin-left: ${(props) => (props.profile ? "-5px" : null)};
   display: block;
+  border: 1px solid grey;
+  border-radius: 50%;
+  padding: 5px;
+`;
+
+const Currency = styled.div`
+  font-size: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 const MenuCard = (props) => {
@@ -57,7 +69,7 @@ const MenuCard = (props) => {
     <Card
       active={props.active}
       last={props.last}
-      onClick={() => props.activate(props.id)}
+      onClick={() => console.log("HI")} //props.activate(props.id)}
       support={props.support}
     >
       <MenuInfo>
@@ -76,9 +88,14 @@ const MenuCard = (props) => {
           <Subtitle>{props.subtitle}</Subtitle>
         </Description>
       </MenuInfo>
-      <Chevron active={props.active}>
-        <ChevronIcon />
-      </Chevron>
+      <Description amount>
+        <Currency>
+          SGD
+          <Title amount>{props.amount}</Title>
+          {"." + props.amount.split(".")[1].toString()}
+        </Currency>
+        <Subtitle>{props.percentage}</Subtitle>
+      </Description>
     </Card>
   );
 };

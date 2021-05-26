@@ -92,11 +92,11 @@ const MenuData = [
         id: "suggest",
       },
       {
-        Title: "Get Help",
+        Title: "Scan QR Code",
         Subtitle: "Find out answers, or contact us",
         Icon: "",
         route: "internal",
-        id: "support",
+        id: "qrscan",
       },
       {
         Title: "Contact Us",

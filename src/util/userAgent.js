@@ -1,5 +1,20 @@
-const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+import { useMediaQuery } from "react-responsive";
 
-export const isIOS = () =>
-  /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-export const isAndroid = () => /android/i.test(userAgent);
+export const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 992 });
+  return isDesktop ? children : null;
+};
+export const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  return isTablet ? children : null;
+};
+export const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  return isMobile ? children : null;
+};
+export const Default = ({ children }) => {
+  const isNotMobile = useMediaQuery({ minWidth: 769 });
+  return isNotMobile ? children : null;
+};
+
+export const isAndroid = false;
