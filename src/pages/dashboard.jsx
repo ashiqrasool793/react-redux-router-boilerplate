@@ -18,8 +18,8 @@ const Container = styled.div`
   box-sizing: border-box;
   @media (max-width: 768px) {
     height: 100vh;
+    overflow: hidden;
     flex-direction: column;
-    position: fixed;
     height: calc(100vh-90px);
   }
 `;
@@ -121,11 +121,15 @@ const Search = styled.div`
   }
 `;
 
-const SearchBar = styled.div`
+const SearchBar = styled.input`
   font-size: 14px;
   font-weight: normal;
   color: #8e8e93;
   font-weight: 400;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
 `;
 
 const SubMenu = styled.div`
@@ -142,6 +146,7 @@ const SubMenu = styled.div`
     position: fixed;
     z-index: 151;
     width: 100%;
+    margin-top: -15px;
   }
 `;
 
@@ -168,9 +173,8 @@ const DashboardContents = styled.div`
   @media (max-width: 768px) {
     align-items: flex-start;
     justify-content: center;
-    position: relative;
     overflow: scroll;
-    top: 50px;
+    margin-top: 30px;
   }
 `;
 
@@ -291,6 +295,9 @@ const Dashboard = () => {
 
   return (
     <>
+      <Mobile>
+        <HeaderMobile />
+      </Mobile>
       <Container>
         <NavMenu>
           <NavLogo src={require("../assets/logo/dbslogo.png")} />
@@ -324,7 +331,7 @@ const Dashboard = () => {
               <DashboardTitle>Home</DashboardTitle>
               <Search>
                 <Icon small src={require("../assets/icons/magnifier.svg")} />
-                <SearchBar>Type transfer, search services, payee...</SearchBar>
+                <SearchBar placeholder="Type transfer, search services, payee..."></SearchBar>
               </Search>
               <Icon menu src={require("../assets/icons/Search.svg")} />
               <Icon menu src={require("../assets/icons/Chatbot.svg")} />

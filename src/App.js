@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop>
-        <Route exact path="/" component={login} />
+        <Route exact path="/" component={Dashboard} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/dragdrop" component={DragDrop} />
         <Route exact path="/face" component={FaceDetection} />

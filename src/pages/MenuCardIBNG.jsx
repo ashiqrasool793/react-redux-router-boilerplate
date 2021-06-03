@@ -91,7 +91,7 @@ const MenuCard = (props) => {
       <Description amount>
         <Currency>
           SGD
-          <Title amount>{props.amount}</Title>
+          <Title amount>{props.amount.split(".")[0].toString()}</Title>
           {"." + props.amount.split(".")[1].toString()}
         </Currency>
         <Subtitle>{props.percentage}</Subtitle>

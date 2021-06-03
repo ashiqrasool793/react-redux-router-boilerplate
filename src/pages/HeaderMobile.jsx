@@ -27,7 +27,8 @@ const Header = styled.div`
   background-color: #ffffff;
   height: 50px;
   position: fixed;
-  z-index: 102;
+  z-index: 800;
+  margin: 0;
 `;
 
 const Icon = styled.img`
