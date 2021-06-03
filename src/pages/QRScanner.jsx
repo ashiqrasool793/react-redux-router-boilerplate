@@ -13,8 +13,10 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   min-height: 100vh;
   margin-top: 0px;
-  box-sizing: border-box;
   background-color: rgba(142, 142, 147, 0.12);
+  * {
+    box-sizing: unset;
+  }
 `;
 
 const Header = styled.div`
